@@ -4,10 +4,10 @@
 这是一个模块化的MNIST手写数字识别神经网络实现,包含训练、测试和工具模块，并支持权重的保存和加载。
 
 ## 快速开始
-```python
+```bash
 python ./train.py #训练
 ```
-```python
+```bash
 python ./test.py #测试
 ```
 
