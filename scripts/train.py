@@ -55,14 +55,14 @@ def main():
     plt.ylabel('Accuracy')
     
     plt.tight_layout()
-    plt.savefig('./training_curves.png')
+    plt.savefig('../docs/training_curves.png')
     print("Training curves saved as training_curves.png")
     
     # 显示训练曲线
     plt.show()
     
     # 保存模型权重
-    model.save_weights('./model_weights.npz')
+    model.save_weights('../weights/model_weights.npz')
     
     # 显示预测结果
     print("\nPredictions for the first 10 test samples:")

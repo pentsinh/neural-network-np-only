@@ -3,24 +3,19 @@
 ## 项目概述
 这是一个模块化的MNIST手写数字识别神经网络实现,包含训练、测试和工具模块，并支持权重的保存和加载。
 
+## 课程报告
+[基于numpy实现的全连接层神经网络的MNIST分类任务](./docs/基于numpy实现的全连接层神经网络的MNIST分类任务.pdf)
+
 ## 快速开始
 ```bash
+cd ./scripts
 python ./train.py #训练
-```
-```bash
 python ./test.py #测试
 ```
 
-
-## 文件结构
-- `train.py`: 模型训练脚本，包含完整的训练流程和权重保存功能
-- `test.py`: 模型测试脚本，用于加载已训练权重并进行预测
-- `utils.py`: 工具模块，包含神经网络核心类、层定义和数据预处理函数
-- `model_weights.npz`: 训练后保存的模型权重文件（运行train.py后生成）
-
 ## 模块说明
 
-### 1. utils.py - 工具模块
+###  [utils.py](./scripts/utils.py) - 工具模块
 - **DenseLayer类**: 全连接层的实现，包含前向传播和反向传播
   - `forward(input_data)`: 前向传播计算
   - `backward(grad_output, learning_rate)`: 反向传播更新权重
@@ -34,14 +29,14 @@ python ./test.py #测试
   - `load_weights(filepath)`: 加载模型权重
 - **load_and_preprocess_data()**: 加载并预处理MNIST数据集
 
-### 2. train.py - 训练模块
+### [train.py](./scripts/train.py) - 训练模块
 - 创建神经网络模型
 - 执行训练流程
 - 保存训练后的权重到`model_weights.npz`
 - 生成训练曲线图`training_curves.png`
 - 训练结束后显示loss曲线
 
-### 3. test.py - 测试模块
+### [test.py](./scripts/test.py) - 测试模块
 - 加载已训练的权重
 - 在测试集上自动评估模型性能
 - 显示测试集准确率和前10个样本的预测结果
@@ -76,16 +71,3 @@ python test.py
 - 该命令将加载已保存的权重并评估模型性能
 - 显示测试集准确率和前10个样本的预测结果
 
-## 技术特点
-- 模块化设计，代码结构清晰
-- 支持权重保存和加载
-- 数值稳定的Softmax实现
-- 防止梯度爆炸的梯度裁剪
-- 批量训练支持
-- 交叉熵损失函数
-
-## 使用场景
-- 模型训练和评估
-- 模型权重重用
-- 快速预测验证
-- 作为更复杂项目的参考实现

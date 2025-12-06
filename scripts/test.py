@@ -19,7 +19,7 @@ def main():
     
     # 加载已训练的权重
     try:
-        model.load_weights('./model_weights.npz')
+        model.load_weights('../weights/model_weights.npz')
     except FileNotFoundError:
         print("Can't find the model weights file.Check if the file exists.")
         return
